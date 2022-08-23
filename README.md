@@ -26,7 +26,7 @@ I want to select some text on my Display1, press F3 or F4 and this text will be 
 
 I found [AutoHotkey](https://www.autohotkey.com/) - automation scripting language for Windows. The scripting language is very weird, but my problem was simple. So I created 2 scripts. I made 2 `ahk` files in notepad. Then I run the script by double-click on the script.
 
-## F3 SendInputToPowerShell
+## F3 SendSelectedTextToPowerShell
 
 ```AutoHotkey
 F3::
@@ -42,7 +42,7 @@ if WinExist("Windows PowerShell"){
 }
 ```
 
-## F4 SendInputToDebian
+## F4 SendSelectedTextToDebian
 
 ```AutoHotkey
 F4::
