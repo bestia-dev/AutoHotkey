@@ -14,49 +14,31 @@ My projects on Github are more like a tutorial than a finished product: [bestia-
 
 ## Motivation
 
-My youtube [tutorials](https://www.youtube.com/channel/UCitt3zFHK2jDetDh6ezI05A) are mostly Screen Recordings with OBS (on Win10).  
-I have 2 monitors: the primary display is the notebooks monitor, the secondary display is a big external monitor. I record only the secondary display, so I can have any number of helper programs opened in the first display.  
-I code and develop an example project in PowerShell, Debian bash, VSCode and web browser. Before recording I create the example project and iteratively modify it, until I am satisfied.  
+My [youtube tutorials](https://www.youtube.com/channel/UCitt3zFHK2jDetDh6ezI05A) are mostly Screen Recordings with OBS (on Win10).  
+I have 2 monitors: the primary display is the small notebooks monitor, the secondary display is a big external monitor. I record only the secondary display, so I can have any number of helper programs opened in the first display.  
+I code and develop an example project in Debian bash, VSCode and web browser. Before recording I create the example project and iteratively modify it, until I am satisfied.  
 Then I copy the code to the side (Display1) and start recording the steps of the project all over again on Display2. Most of the text already exists, so I just need to copy and paste it.  
 The traditional Ctrl-c and Ctrl-v approach was cumbersome because I needed to move my mouse from one active window to the other repeatedly. It is bad enough on one display, but with 2 displays it is very, very bad. I needed a better streamlined solution.  
 
-I want to select some text on my Display1, press F3 or F4 and this text will be sent to PowerShell or Debian bash Terminal window on Display2. I would like to see it also like a typing simulation that send keystrokes one by one. It is visually more appealing. Finally I want this window to become active, so I can press Enter to run the command. The mouse does not need to move, it is ready for the next line of code on Display1.  
+I want to select some text on my Display1, press F4 and this text will be sent to Debian bash Terminal window on Display2. I would like to see it also like a typing simulation that send keystrokes one by one. It is visually more appealing. Finally I want this window to become active, so I can press Enter to run the command. The mouse does not need to move, it is ready for the next line of code on Display1.  
 
 ## Open-source AutoHotkey
 
-I found [AutoHotkey](https://www.autohotkey.com/) - automation scripting language for Windows. The scripting language is very weird, but my problem was simple. So I created 2 scripts. I made 2 `ahk` files in notepad. Then I run the script by double-click on the script.
+I found [AutoHotkey](https://www.autohotkey.com/) - automation scripting language for Windows. The scripting language is very weird, but my problem is simple.  
+In VSCode I created 2 scripts: `F4CtrlSetDestinationForF4.ahk` and `F4SendSelectedTextToDestinationWindow.ahk`.  
 
-## F3 SendSelectedTextToPowerShell
+## How to use it
 
-```AutoHotkey
-F3::
-SendInput ^c
-ClipWait
-clipboard := clipboard   ; Convert any copied files, HTML, or other formatted text to plain text.
-ClipWait
-if WinExist("Administrator: Windows PowerShell"){
-    WinActivate ; Use the window found by WinExist.
-    Send, %clipboard%
-}else{
-    MsgBox, PowerShell window Not found
-}
+Start manually just the first script that reacts on ctrl-F4 :
+
+```cmd
+"c:\Program Files\AutoHotkey\AutoHotkey.exe" c:\Users\Luciano\Dropbox\BestiaDev\github_backup\AutoHotkey\F4CtrlSetDestinationForF4.ahk
 ```
 
-## F4 SendSelectedTextToDebian
-
-```AutoHotkey
-F4::
-SendInput ^c
-ClipWait
-clipboard := clipboard   ; Convert any copied files, HTML, or other formatted text to plain text.
-ClipWait
-if WinExist("luciano@Flex5: ~"){
-    WinActivate ; Use the window found by WinExist.
-    Send, %clipboard%
-}else{
-    MsgBox, Debian window Not found
-}
-```
+Then go into the bash terminal window and press ctrl-F4 to make this windows the destination for F4.  
+The ctrl-F4 triggers the script which will start the second script with a parameter - the window handle. So the second script now knows what is the destination window.  
+Now we can select a text in any window and press F4. This triggers the second script that will copy this text to the destination window and activate that window.  
+So we can press Enter to run the command. The mouse stays on the source window where we can copy some more text.  
 
 ## open-source free and free as a beer
 
