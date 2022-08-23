@@ -9,7 +9,7 @@
 
 [comment]: # (auto_cargo_toml_to_md end)
 
-Hashtags: #presentation
+Hashtags: #presentation  
 My projects on Github are more like a tutorial than a finished product: [bestia-dev tutorials](https://github.com/bestia-dev/tutorials_rust_wasm).
 
 ## Motivation
@@ -46,9 +46,13 @@ if WinExist("Windows PowerShell"){
 
 ```AutoHotkey
 F4::
+SendInput ^c
+ClipWait
+clipboard := clipboard   ; Convert any copied files, HTML, or other formatted text to plain text.
+ClipWait
 if WinExist("luciano@Flex5: ~"){
     WinActivate ; Use the window found by WinExist.
-    Send, My First Script
+    Send, %clipboard%
 }else{
     MsgBox, Debian window Not found
 }
