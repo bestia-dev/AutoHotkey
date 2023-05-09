@@ -1,12 +1,12 @@
-﻿F4::
+﻿F3::
 DestinationHwnd := A_Args[1] ; command line parameter destination window
-SendInput ^c
-ClipWait
-clipboard := clipboard   ; Convert any copied files, HTML, or other formatted text to plain text.
-ClipWait
+
+Clipboard := StrReplace(Clipboard, "`r`n`r`n", "`n")
+Clipboard := StrReplace(Clipboard, "`r`n", "`n")
+
 if WinExist("ahk_id" DestinationHwnd){
     WinActivate ; Use the window found by WinExist.
-    Send, %clipboard%
+    SendRaw %clipboard%
 }else{
     MsgBox, Selected window Not found
 }

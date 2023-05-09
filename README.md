@@ -40,14 +40,18 @@ The ctrl-F4 triggers the script which will start the second script with a parame
 Now we can select a text in any window and press F4. This triggers the second script that will copy this text to the destination window and activate that window.  
 So we can press Enter to run the command. The mouse stays on the source window where we can copy some more text.  
 
-## open-source free and free as a beer
+## Open-source and free as a beer
 
 My open-source projects are free as a beer (MIT license).  
 I just love programming.  
-But I need also to drink. If you find my projects and tutorials helpful,  
-please buy me a beer donating on my [paypal](https://paypal.me/LucianoBestia).  
+But I need also to drink. If you find my projects and tutorials helpful, please buy me a beer by donating to my [PayPal](https://paypal.me/LucianoBestia).  
 You know the price of a beer in your local bar ;-)  
 So I can drink a free beer for your health :-)  
 [Na zdravje!](https://translate.google.com/?hl=en&sl=sl&tl=en&text=Na%20zdravje&op=translate) [Alla salute!](https://dictionary.cambridge.org/dictionary/italian-english/alla-salute) [Prost!](https://dictionary.cambridge.org/dictionary/german-english/prost) [Nazdravlje!](https://matadornetwork.com/nights/how-to-say-cheers-in-50-languages/) 🍻
+
+[//bestia.dev](https://bestia.dev)  
+[//github.com/bestia-dev](https://github.com/bestia-dev)  
+[//bestiadev.substack.com](https://bestiadev.substack.com)  
+[//youtube.com/@bestia-dev-tutorials](https://youtube.com/@bestia-dev-tutorials)  
 
 [comment]: # (auto_md_to_doc_comments segment end A)
