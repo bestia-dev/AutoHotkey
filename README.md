@@ -9,6 +9,10 @@
 
 [comment]: # (auto_cargo_toml_to_md end)
 
+![status](https://img.shields.io/badge/obsolete-red) 
+![status](https://img.shields.io/badge/archived-red) 
+![status](https://img.shields.io/badge/tutorial-yellow) 
+
 Hashtags: #presentation  
 My projects on Github are more like a tutorial than a finished product: [bestia-dev tutorials](https://github.com/bestia-dev/tutorials_rust_wasm).
 
